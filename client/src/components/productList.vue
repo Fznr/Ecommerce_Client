@@ -5,40 +5,20 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 import productCard from './productCard'
 export default {
   name: 'productList',
   components: {
     productCard
   },
-  data () {
-    return {
-      products: {}
-    }
-  },
-  methods: {
-    findAll () {
-      axios({
-        method: 'GET',
-        url: 'http://localhost:3000/product',
-        headers: {
-          access_token: localStorage.access_token
-        }
-      })
-        .then(({ data }) => {
-          // console.log(data.Product)
-          this.products = data.Product
-          console.log(this.products)
-          // this.task= data.Task
-        })
-        .catch(err => {
-          console.log(err)
-        })
+  computed: {
+    products () {
+      return this.$store.state.products
     }
   },
   created () {
-    this.findAll()
+    this.$store.dispatch('findAll')
   }
 }
 </script>

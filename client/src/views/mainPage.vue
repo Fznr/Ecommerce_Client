@@ -2,10 +2,10 @@
   <div class="mainPage">
       <div class="navbar">
         <div>
-        <router-link to="/mainPage">Home</router-link>
+        <router-link to="/mainPage" class="routerLink">Home</router-link>
         </div>
         <div>
-        <router-link to="/">Create</router-link>
+        <router-link to="/addProduct" class="routerLink">Create</router-link>
         </div>
         <div>
         <button v-on:click="logout">Logout</button>
@@ -29,11 +29,6 @@ export default {
     }
   },
   created () {
-    if (!localStorage.access_token) {
-      this.$router.push('/')
-    }
-  },
-  mounted () {
     if (!localStorage.access_token) {
       this.$router.push('/')
     }
