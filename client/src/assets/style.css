@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.loginPage {
+    width: 100vw;
+    height: 100vh;
+    background-color: #689897;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginPage .loginCard {
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+  }
+  .loginPage .loginCard .loginCardLeft {
+    width: 40%;
+    height: 100%;
+    background-color: #1b535c;
+    border-radius: 15px 0px 0px 15px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .loginPage .loginCard .loginCardRight {
+    width: 60%;
+    height: 100%;
+    background-color: #ffba33;
+    border-radius: 0px 15px 15px 0px;
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .loginPage .loginCard .loginCardRight .loginFormHead {
+    margin-top: 20%;
+    width: 60%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: whitesmoke;
+  }
+  .loginPage .loginCard .loginCardRight .loginForm {
+    padding-top: 5%;
+    height: 40%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+  }
+  .loginPage .loginCard .loginCardRight .loginForm form {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /*--------------------mainPage---------------------*/
+
+  .mainPage{
+      background-color: #222d31;
+      width: 100vw;
+      height: 100vh;
+  }
+  .navbar{
+      padding-top: 5%;
+      background-color: #222d31;
+      width: 15%;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  .navbar div{
+    margin-bottom: 5%;
+  }
+  .productList{
+    background-color: whitesmoke;
+    height: 98%;
+    width: 84%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .productCard{
+    background-color: yellow;
+    width: 15%;
+    height: 35%;
+    margin: 2%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
