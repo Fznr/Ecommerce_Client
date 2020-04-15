@@ -32,6 +32,25 @@ const store = new Vuex.Store({
           })
       })
     },
+    editPage (context, payload) {
+      return new Promise((resolve, reject) => {
+        axios({
+          method: 'GET',
+          url: 'http://localhost:3000/product/' + payload,
+          headers: {
+            access_token: localStorage.access_token
+          }
+        })
+          .then(({ data }) => {
+            context.commit('SET_PRODUCTS', data.Product[0])
+            resolve(data)
+          })
+          .catch(err => {
+            console.log(err)
+            reject(err)
+          })
+      })
+    },
     findAll (context, payload) {
       console.log('masuk')
       axios({
@@ -73,6 +92,29 @@ const store = new Vuex.Store({
         axios({
           method: 'POST',
           url: 'http://localhost:3000/product',
+          headers: {
+            access_token: localStorage.access_token
+          },
+          data: {
+            name: payload.name,
+            image_url: payload.image_url,
+            price: payload.price,
+            stock: payload.stock
+          }
+        })
+          .then(({ data }) => {
+            resolve(data)
+          })
+          .catch(err => {
+            reject(err)
+          })
+      })
+    },
+    edit (_, payload) {
+      return new Promise((resolve, reject) => {
+        axios({
+          method: 'PUT',
+          url: 'http://localhost:3000/product/' + payload.id,
           headers: {
             access_token: localStorage.access_token
           },

@@ -6,7 +6,7 @@
         <h4>{{product.price}}</h4>
         <h3>Stock:</h3>
         <h4>{{product.stock}}</h4>
-        <button>Edit</button><br>
+        <button v-on:click="edit(product.id)">Edit</button><br>
         <button v-on:click="hapus(product.id)">Delete</button>
     </div>
 </template>
@@ -20,6 +20,15 @@ export default {
       this.$store.dispatch('hapus', id)
         .then(data => {
           this.$store.dispatch('findAll')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    edit (id) {
+      this.$store.dispatch('editPage', id)
+        .then(data => {
+          this.$router.push('/editProduct')
         })
         .catch(err => {
           console.log(err)
