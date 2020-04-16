@@ -19,6 +19,7 @@ export default {
     hapus (id) {
       this.$store.dispatch('hapus', id)
         .then(data => {
+          this.$toastr.s('Product Successfully Deleted')
           this.$store.dispatch('findAll')
         })
         .catch(err => {

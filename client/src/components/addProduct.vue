@@ -39,10 +39,19 @@ export default {
     add () {
       this.$store.dispatch('create', this.payload)
         .then(data => {
+          this.$toastr.s('Product Successfully Added')
           this.$router.push('/mainPage')
         })
         .catch(err => {
-          console.log(err)
+          console.log(err.response.data.errors.map(el => el.message))
+          const errors = err.response.data.errors.map(el => el.message)
+          if (errors.length > 1) {
+            for (let i = 0; i < errors.length; i++) {
+              this.$toastr.e(errors[i])
+            }
+          } else {
+            this.$toastr.e(errors)
+          }
         })
     }
   }

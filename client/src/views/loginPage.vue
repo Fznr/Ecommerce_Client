@@ -39,10 +39,13 @@ export default {
         .then((data) => {
           console.log('masuk')
           localStorage.setItem('access_token', data.access_token)
+          this.$toastr.s('Success!', 'Welcome to E-commerce')
           this.$router.push('mainPage')
         })
         .catch(err => {
-          console.log(err)
+          console.log(err.response.data.errors.map(el => el.message))
+          const errors = err.response.data.errors.map(el => el.message)
+          this.$toastr.e(errors)
         })
     }
   },
