@@ -18,7 +18,7 @@ const store = new Vuex.Store({
       return new Promise((resolve, reject) => {
         axios({
           method: 'POST',
-          url: 'http://localhost:3000/admin/signin',
+          url: 'https://polar-dusk-05144.herokuapp.com/admin/signin',
           data: {
             email: payload.email,
             password: payload.password
@@ -36,7 +36,7 @@ const store = new Vuex.Store({
       return new Promise((resolve, reject) => {
         axios({
           method: 'GET',
-          url: 'http://localhost:3000/product/' + payload,
+          url: 'https://polar-dusk-05144.herokuapp.com/product/' + payload,
           headers: {
             access_token: localStorage.access_token
           }
@@ -55,7 +55,7 @@ const store = new Vuex.Store({
       console.log('masuk')
       axios({
         method: 'GET',
-        url: 'http://localhost:3000/product',
+        url: 'https://polar-dusk-05144.herokuapp.com/product',
         headers: {
           access_token: localStorage.access_token
         }
@@ -74,7 +74,7 @@ const store = new Vuex.Store({
       return new Promise((resolve, reject) => {
         axios({
           method: 'DELETE',
-          url: 'http://localhost:3000/product/' + payload,
+          url: 'https://polar-dusk-05144.herokuapp.com/product/' + payload,
           headers: {
             access_token: localStorage.access_token
           }
@@ -91,7 +91,7 @@ const store = new Vuex.Store({
       return new Promise((resolve, reject) => {
         axios({
           method: 'POST',
-          url: 'http://localhost:3000/product',
+          url: 'https://polar-dusk-05144.herokuapp.com/product',
           headers: {
             access_token: localStorage.access_token
           },
@@ -114,7 +114,7 @@ const store = new Vuex.Store({
       return new Promise((resolve, reject) => {
         axios({
           method: 'PUT',
-          url: 'http://localhost:3000/product/' + payload.id,
+          url: 'https://polar-dusk-05144.herokuapp.com/product/' + payload.id,
           headers: {
             access_token: localStorage.access_token
           },
